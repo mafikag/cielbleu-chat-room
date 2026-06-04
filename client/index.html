@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciel Bleu Chat Room</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="app">
+
+  <div class="sidebar">
+
+      <div class="logo">
+        Ciel Bleu 
+      </div>
+
+      <div class="online-section">
+          <h3>Online Users</h3>
+          <div id="onlineUsers"></div>
+      </div>
+
+      <div class="qr-section">
+          <h3>Room Invitation</h3>
+          <div id="qrcode"></div>
+      </div>
+
+  </div>
+
+  <div class="main">
+
+      <div id="join-container" class="join-box">
+
+          <h1>Collegians Room Chat</h1>
+          <p>Party Chat</p>
+
+          <input type="text" id="username" placeholder="Enter Guest Name">
+          <input type="text" id="room" placeholder="Enter Room Name">
+
+          <button id="joinBtn">Join Room</button>
+
+      </div>
+
+      <div id="chat-container" class="chat-box hidden">
+
+          <div class="chat-header">
+              <h2>Collegians Room</h2>
+          </div>
+
+          <div id="messages"></div>
+
+          <div class="chat-input">
+              <input type="text" id="messageInput" placeholder="Write message...">
+              <button id="sendBtn">Send</button>
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
