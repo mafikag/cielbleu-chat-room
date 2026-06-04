@@ -1,10 +1,10 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/", "destination": "/client/index.html" },
-    { "source": "/client", "destination": "/client/index.html" },
-    { "source": "/style.css", "destination": "/client/style.css" },
-    { "source": "/app.js", "destination": "/client/app.js" },
-    { "source": "/config.js", "destination": "/client/config.js" }
+    { "source": "/client", "destination": "/index.html" },
+    { "source": "/client/(.*)", "destination": "/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

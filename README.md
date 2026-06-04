@@ -19,10 +19,11 @@ Firebase setup:
 5. Copy `server/.env.example` to `server/.env`.
 6. Fill `FIREBASE_PROJECT_ID` with your Firebase project ID.
 
-Run:
-cd server
-npm install
-npm run dev
+Vercel deploy:
+1. Fill `client/config.js` with your Firebase web app config.
+2. Publish `firestore.rules` in Firebase Console > Firestore Database > Rules.
+3. Deploy this repository to Vercel.
+4. Use Framework Preset `Other`, Build Command `npm run build`, Output Directory `dist`.
 
 Open:
 client/index.html

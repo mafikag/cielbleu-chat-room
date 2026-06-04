@@ -1,0 +1,44 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /rooms/{roomId}/messages/{messageId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly([
+          'username',
+          'room',
+          'message',
+          'createdAt'
+        ])
+        && request.resource.data.username is string
+        && request.resource.data.username.size() > 0
+        && request.resource.data.username.size() <= 40
+        && request.resource.data.room is string
+        && request.resource.data.room.size() > 0
+        && request.resource.data.room.size() <= 80
+        && request.resource.data.message is string
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 1000
+        && request.resource.data.createdAt == request.time;
+    }
+
+    match /rooms/{roomId}/presence/{sessionId} {
+      allow read: if true;
+      allow create, update: if request.resource.data.keys().hasOnly([
+          'username',
+          'room',
+          'online',
+          'updatedAt'
+        ])
+        && request.resource.data.username is string
+        && request.resource.data.username.size() > 0
+        && request.resource.data.username.size() <= 40
+        && request.resource.data.room is string
+        && request.resource.data.room.size() > 0
+        && request.resource.data.room.size() <= 80
+        && request.resource.data.online is bool
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if true;
+    }
+  }
+}
