@@ -1,3 +1,2 @@
-window.CHAT_SERVER_URL = window.CHAT_SERVER_URL || "";
-window.CHAT_SOCKET_PATH = window.CHAT_SOCKET_PATH
-  || (window.location.pathname.startsWith("/client") ? "/client/socket.io" : "/socket.io");
+window.CHAT_SERVER_URL = window.CHAT_SERVER_URL || "https://chat-room.goldentulipbelitung.com";
+window.CHAT_SOCKET_PATH = window.CHAT_SOCKET_PATH || "/client/socket.io";
