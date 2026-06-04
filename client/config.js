@@ -8,3 +8,5 @@ window.FIREBASE_CONFIG = window.FIREBASE_CONFIG || {
   appId: "1:381670986704:web:45f1c46c38d095e5211fd5",
   measurementId: "G-Q5WR1CDFDW"
 };
+
+window.DEFAULT_ROOM_NAME = window.DEFAULT_ROOM_NAME || "ciel bleu";

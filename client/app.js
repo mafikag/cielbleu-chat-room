@@ -20,11 +20,11 @@ const joinBtn = document.getElementById("joinBtn");
 const sendBtn = document.getElementById("sendBtn");
 
 const usernameInput = document.getElementById("username");
-const roomInput = document.getElementById("room");
 
 const joinContainer = document.getElementById("join-container");
 const chatContainer = document.getElementById("chat-container");
 
+const roomTitle = document.getElementById("roomTitle");
 const messageInput = document.getElementById("messageInput");
 const messagesDiv = document.getElementById("messages");
 const onlineUsersDiv = document.getElementById("onlineUsers");
@@ -62,10 +62,10 @@ function createSessionId(){
 
 async function joinRoom(){
   username = usernameInput.value.trim();
-  room = roomInput.value.trim();
+  room = window.DEFAULT_ROOM_NAME || "collegians-room";
 
-  if(!username || !room){
-    alert("Please fill all fields");
+  if(!username){
+    alert("Please enter your guest name");
     return;
   }
 
@@ -76,6 +76,7 @@ async function joinRoom(){
   joinContainer.classList.add("hidden");
   chatContainer.classList.remove("hidden");
   messagesDiv.innerHTML = "";
+  roomTitle.textContent = room;
 
   generateQRCode();
   listenToMessages();
