@@ -10,7 +10,7 @@ body{
   background:url('https://avatarfiles.alphacoders.com/374/thumb-1920-374833.png') center/cover no-repeat;
   min-height:100vh;
   min-height:100dvh;
-  overflow-x:hidden;
+  /*overflow-x:hidden;*/
   color:white;
 }
 
