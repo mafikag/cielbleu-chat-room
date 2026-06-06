@@ -111,7 +111,7 @@ body{
   background:rgba(255,255,255,0.06);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:24px;
-  backdrop-filter:blur(30px);
+  /*backdrop-filter:blur(30px);*/
   padding:35px;
 }
 
@@ -154,9 +154,9 @@ button{
   cursor:pointer;
 }
 
-.hidden{
+/*.hidden{
   display:none;
-}
+}*/
 
 .chat-header{
   margin-bottom:25px;
