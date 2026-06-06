@@ -154,9 +154,9 @@ button{
   cursor:pointer;
 }
 
-/*.hidden{
+.hidden{
   display:none;
-}*/
+}
 
 .chat-header{
   margin-bottom:25px;
@@ -377,6 +377,6 @@ button{
   }
 }
 
-/*.hidden{
+.hidden{
   display:none !important;
-}*/
+}
